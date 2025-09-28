@@ -15,11 +15,11 @@ class Solution {
                 secondMax = Max;
                 Max = nums[i];
                 count++;
-            } else if (nums[i] > secondMax) {
+            } else if (nums[i] > secondMax && nums[i]!=secondMax) {
                 thirdMax = secondMax;
                 secondMax = nums[i];
                 count++;
-            } else if (nums[i] > thirdMax) {
+            } else if (nums[i] > thirdMax && nums[i]!=thirdMax) {
                 thirdMax = nums[i];
                 count++;
             }
