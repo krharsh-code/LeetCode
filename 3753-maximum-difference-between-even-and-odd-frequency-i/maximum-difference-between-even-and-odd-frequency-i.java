@@ -12,9 +12,9 @@ class Solution {
         int minEven = Integer.MAX_VALUE;
 
         for (int freq : map.values()) {
-            if (freq % 2 == 1) { // odd frequency
+            if (freq % 2 == 1) { 
                 maxOdd = Math.max(maxOdd, freq);
-            } else { // even frequency
+            } else {  
                 minEven = Math.min(minEven, freq);
             }
         }
