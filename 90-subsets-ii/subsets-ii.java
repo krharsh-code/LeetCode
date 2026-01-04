@@ -6,18 +6,14 @@ class Solution {
      return ans; 
     }
     public void subset(int[] nums,int idx,List<List<Integer>>ans,List<Integer> temp){
-        if(idx==nums.length){
-            ans.add(new ArrayList<>(temp));
-            return;
-        }
-        
-        temp.add(nums[idx]);
-        subset(nums,idx+1,ans,temp);
-        temp.remove(temp.size()-1);
-        
-      int n=idx+1;
-       while(n<nums.length && nums[n]==nums[n-1]) n++;
+    ans.add(new ArrayList<>(temp));
 
-       subset(nums,n,ans,temp);
+    for(int i=idx;i<nums.length;i++){
+        if(i>idx && nums[i]== nums[i-1]) continue;
+
+        temp.add(nums[i]);
+        subset(nums,i+1,ans,temp);
+        temp.remove(temp.size()-1);
+    }
    }
 }
