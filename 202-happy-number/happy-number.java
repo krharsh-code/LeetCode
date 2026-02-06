@@ -1,20 +1,17 @@
 class Solution {
     public boolean isHappy(int n) {
-        HashSet<Integer> seen = new HashSet<>();
-        while (n != 1 && !seen.contains(n)) {
-            seen.add(n);
-            n = getNext(n);
-        }
-        return n == 1;
+        return solve(n);
     }
+    public boolean solve(int n){
+        if(n==1) return true;
+        if(n==4) return false;
 
-    private int getNext(int n) { // Moved getNext outside isHappy and made it private
-        int sum = 0;
-        while (n > 0) {
-            int d = n % 10;
-            sum += d * d;
-            n /= 10;
+        int sum=0;
+        while(n>0){
+            int d=n%10;
+            sum=sum+d*d;
+            n=n/10;
         }
-        return sum;
+         return solve(sum);
     }
 }
