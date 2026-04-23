@@ -34,7 +34,6 @@ class Solution {
                 result[1] = primes.get(i);
             }
         }
-        
-        return result;
+         return result;
     }
 }
